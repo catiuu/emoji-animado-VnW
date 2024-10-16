@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #5d3800;
+}
+
+.rosto {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #ffcd00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 180px;
+    width: 150px;
+    height: 70px;
+    background-color: #b57700;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    transition: 0.5s;
+  }
+
+  &:hover::before {
+    top: 210px;
+    width: 150px;
+    height: 20px;
+    background-color: #b57700;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .olhos {
+    position: relative;
+    top: -40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .olho {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      display: block;
+      background-color: #ffffff;
+      margin: 0 15px;
+      border-radius: 50%;
+      overflow: hidden;
+      transition: 0.3s;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        background-color: #000000;
+        border-radius: 50%;
+        transition: 0.3s;
+      }
+    }
+  }
+
+  &:hover .olho {
+    height: 10px;
+    background-color: #000000;
+    border-radius: 0;
+  }
+}
